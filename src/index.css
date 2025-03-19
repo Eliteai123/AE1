@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+    background-size: 200% 200%;
+  }
+  
+  .animate-gradient-text {
+    animation: gradient 4s linear infinite;
+    background-size: 200% auto;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  
+  .animate-spin-reverse {
+    animation: spin 6s linear reverse infinite;
+  }
+  
+  .neon-ring {
+    box-shadow: 
+      0 0 20px #4f46e5,
+      0 0 40px #4f46e5,
+      0 0 60px #4f46e5,
+      inset 0 0 20px #4f46e5,
+      inset 0 0 40px #4f46e5;
+  }
+  
+  .neon-ring-outer {
+    box-shadow: 
+      0 0 30px #06b6d4,
+      0 0 50px #06b6d4,
+      inset 0 0 30px #06b6d4;
+  }
+  
+  .neon-ring-inner {
+    box-shadow: 
+      0 0 40px #ec4899,
+      0 0 60px #ec4899,
+      inset 0 0 40px #ec4899;
+  }
+  
+  .nav-link {
+    position: relative;
+    transition: text-shadow 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-card {
+    transition: all 0.3s ease;
+  }
+  
+  .glow-card:hover {
+    box-shadow:
+      0 0 15px rgba(255, 255, 255, 0.4),
+      0 0 30px rgba(147, 51, 234, 0.3),
+      0 0 45px rgba(79, 70, 229, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .pricing-card:hover {
+    box-shadow:
+      0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 40px rgba(96, 165, 250, 0.4),
+      0 0 60px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .testimonial-card {
+    transition: all 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    box-shadow:
+      0 0 20px rgba(168, 85, 247, 0.4),
+      0 0 40px rgba(59, 130, 246, 0.3),
+      0 0 60px rgba(236, 72, 153, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@layer base {
+  body {
+    @apply bg-transparent;
+  }
+
+  /* Responsive base font size */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    html {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Custom container width constraints for larger screens */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+}
